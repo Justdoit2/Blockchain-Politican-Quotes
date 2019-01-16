@@ -1,0 +1,21 @@
+//To unlock account:
+	-ganache-cli
+
+//Get transaction count
+       -web3.eth.getTransactionCount('public key');
+
+//Get transaction, along with inputs
+       -web3.eth.getTransaction('file hash');
+
+//Get previous blocks to view past transactions/inputs
+       -web3.eth.getBlock('blocknumber');
+
+//How to Decode Data from Block
+
+	1)get transaction file hash
+	2) const Input=require('ethereum-input-data-decoder');
+        3)const metadata=require('../build/contracts/Proof');
+        4)const decoder=new Input(metadata.abi);
+        5)const result=decoder.decodeData('block's input numbers');
+
+        
