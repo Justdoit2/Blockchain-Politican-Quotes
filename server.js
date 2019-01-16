@@ -44,12 +44,7 @@ app.get("/submit",function(req,res){//req is getting from, res is outputting
         var f1=fileHash; var o2=owner;           
       proof.methods.set(owner,fileHash).send({from:"0x5d7ab9555069b8675317102bb11518c0f90781cc"}).on('transactionHash',function(hash){console.log(hash);});
          console.log(" \n here is the filehash");
-        // console.log(proof.methods.get(fileHash));//shows filehash
-           //  console.log(proof.methods.get(owner));        
-
-
-        // console.log(transaction._parent._address + '\n');//proof's contract address
-       //  console.log(transaction.encodeABI());//proof's json?
+      
      res.send("Here is the file's hash: " + req.query.hash);//gets the same filehash and send it 
                  var dict={}; dict[f1]=o2;
                  bigData.push(dict);
@@ -61,7 +56,7 @@ app.get("/submit",function(req,res){//req is getting from, res is outputting
                 var fileHash=req.query.hash;
                   console.log(typeof(fileHash));
               
-             //var details=proof.methods.get.call(fileHash,{from:"0xaa83b1cd97e62b9bde4722475ac067faa9f5d6f0"}); //call method version broken, currently being updated
+             //var details=proof.methods.get.call(fileHash,{from:"0xaa83b1cd97e62b9bde4722475ac067faa9f5d6f0"}); //call method version broken
                
                  
                 
